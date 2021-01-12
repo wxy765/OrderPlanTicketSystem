@@ -8,7 +8,7 @@ public class FlightServiceImpl implements IFlightService {
 
     @Override
     public void insetFlight(Flight flight) {
-
+        System.out.println("界面传来的航班信息:"+flight);
     }
 
     @Override
