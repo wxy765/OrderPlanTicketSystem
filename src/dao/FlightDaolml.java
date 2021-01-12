@@ -1,10 +1,14 @@
+package dao;
+
+import bean.Flight;
+
 import java.util.Set;
 
-public class FlightDaolml implements IFlightDao{
+public class FlightDaolml implements IFlightDao {
 
         @Override
         public void insertFlight(Flight flight) {
-
+            System.out.println("数据到达了DAO层："+flight);
         }
 
         @Override
