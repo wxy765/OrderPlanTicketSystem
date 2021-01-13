@@ -1,11 +1,12 @@
 package cn.edu.hcnu.ui;
 
 import cn.edu.hcnu.bean.Flight;
-import cn.edu.hcnu.bll.*;
-import cn.edu.hcnu.bll.impl.IFlightService;
+import cn.edu.hcnu.bll.IFlightService;
+import cn.edu.hcnu.bll.impl.FlightServiceImpl;
 
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,7 +22,7 @@ public class MainUI {
             System.out.println("按3，查询航班信息");
             System.out.println("按4，机票预订");
             System.out.println("按5，机票退订");
-            System.out.println("按6，退出系统");
+            System.out.println("按6，推出系统");
 
             int choice = sc.nextInt();
 
@@ -46,7 +47,7 @@ public class MainUI {
 
                 IFlightService iFlightService = new FlightServiceImpl();
                 try {
-                    iFlightService.insetFlight(flight);
+                    iFlightService.insertFlight(flight);
                 } catch (SQLException e) {
                     String errorMessage = e.getMessage();
                     if (errorMessage.startsWith("ORA-12899")) {
@@ -60,11 +61,24 @@ public class MainUI {
                         if (m.find()) {
                             String tableName = m.group(4);
                             String columnName = m.group(5);
-                            System.out.println(tableName + "表的" + columnName + "这一列的值过大，请仔细检查");
+                            System.out.println(tableName + "表的" + columnName + "这一列的值过大，请仔细检查，联系管理员");
                         } else {
                             System.out.println("NO MATCH");
                         }
                     }
+                }
+            } else if (choice == 2) {
+                IFlightService iFlightService = new FlightServiceImpl();
+                try {
+                    Set<Flight> allFlights=iFlightService.getAllFlights();
+                    /*
+                    Set的遍历需要用到迭代器
+                     */
+                    for(Flight flight:allFlights){
+                        System.out.println(flight);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
         }

@@ -1,21 +1,22 @@
 package cn.edu.hcnu.bean;
 
 public class Flight {
-    private String id;
-    private String flightId;//航班编号
-    private String planType;//飞机类型
-    private int currentSeatNum;//座位数
-    private String departureAirPort;//起飞机场
-    private String destionAirPort;//目的机场
-    private String departureTime;//起飞时间
 
-    public Flight(String id, String flightId, String planType, int currentSeatNum, String departureAirPort, String destionAirPort, String departureTime) {
+    private String id;//主键，UUID
+    private String flightId;
+    private String planeType;
+    private int currentSeatsNum;
+    private String departureAirPort;
+    private String destinationAirPort;
+    private String departureTime;
+
+    public Flight(String id, String flightId, String planeType, int currentSeatsNum, String departureAirPort, String destinationAirPort, String departureTime) {
         this.id = id;
         this.flightId = flightId;
-        this.planType = planType;
-        this.currentSeatNum = currentSeatNum;
+        this.planeType = planeType;
+        this.currentSeatsNum = currentSeatsNum;
         this.departureAirPort = departureAirPort;
-        this.destionAirPort = destionAirPort;
+        this.destinationAirPort = destinationAirPort;
         this.departureTime = departureTime;
     }
 
@@ -35,20 +36,20 @@ public class Flight {
         this.flightId = flightId;
     }
 
-    public String getPlanType() {
-        return planType;
+    public String getPlaneType() {
+        return planeType;
     }
 
-    public void setPlanType(String planType) {
-        this.planType = planType;
+    public void setPlaneType(String planeType) {
+        this.planeType = planeType;
     }
 
-    public int getCurrentSeatNum() {
-        return currentSeatNum;
+    public int getCurrentSeatsNum() {
+        return currentSeatsNum;
     }
 
-    public void setCurrentSeatNum(int currentSeatNum) {
-        this.currentSeatNum = currentSeatNum;
+    public void setCurrentSeatsNum(int currentSeatsNum) {
+        this.currentSeatsNum = currentSeatsNum;
     }
 
     public String getDepartureAirPort() {
@@ -59,12 +60,12 @@ public class Flight {
         this.departureAirPort = departureAirPort;
     }
 
-    public String getDestionAirPort() {
-        return destionAirPort;
+    public String getDestinationAirPort() {
+        return destinationAirPort;
     }
 
-    public void setDestionAirPort(String destionAirPort) {
-        this.destionAirPort = destionAirPort;
+    public void setDestinationAirPort(String destinationAirPort) {
+        this.destinationAirPort = destinationAirPort;
     }
 
     public String getDepartureTime() {
@@ -78,13 +79,12 @@ public class Flight {
     @Override
     public String toString() {
         return "Flight{" +
-                "id='" + id + '\'' +
-                ", flightId='" + flightId + '\'' +
-                ", planType='" + planType + '\'' +
-                ", currentSeatNum='" + currentSeatNum + '\'' +
-                ", departureAirPort='" + departureAirPort + '\'' +
-                ", destionAirPort='" + destionAirPort + '\'' +
-                ", departureTime='" + departureTime + '\'' +
+                ", 航班ID='" + flightId + '\'' +
+                ", 机型='" + planeType + '\'' +
+                ", 座位数=" + currentSeatsNum +
+                ", 起飞机场='" + departureAirPort + '\'' +
+                ", 目的机场='" + destinationAirPort + '\'' +
+                ", 起飞时间='" + departureTime + '\'' +
                 '}';
     }
 }
