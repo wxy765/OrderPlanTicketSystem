@@ -1,6 +1,7 @@
-package impl;
+package cn.edu.hcnu.bll;
 
-import bean.Flight;
+import cn.edu.hcnu.bean.Flight;
+import cn.edu.hcnu.bll.impl.IFlightService;
 
 import java.util.Set;
 

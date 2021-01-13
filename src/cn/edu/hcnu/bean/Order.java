@@ -1,6 +1,6 @@
-package bean;
+package cn.edu.hcnu.bean;
 
-import bean.Customer;
+import cn.edu.hcnu.bean.Customer;
 
 public class Order {
     private String id;

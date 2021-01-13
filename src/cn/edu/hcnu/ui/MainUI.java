@@ -1,8 +1,8 @@
-package ui;
+package cn.edu.hcnu.ui;
 
-import bean.Flight;
-import impl.FlightServiceImpl;
-import impl.IFlightService;
+import cn.edu.hcnu.bean.Flight;
+import cn.edu.hcnu.bll.FlightServiceImpl;
+import cn.edu.hcnu.bll.impl.IFlightService;
 
 import java.util.Scanner;
 import java.util.UUID;
@@ -20,8 +20,7 @@ public class MainUI {
             System.out.println("按6，退出系统");
             int choice=sc.nextInt();
             if(choice==1){
-                String id= UUID.randomUUID().toString();
-                System.out.println(id.replace("-",""));
+                String id= UUID.randomUUID().toString().replace("-","");
                 System.out.println("请输入航班编号:");
                 String flightId=sc.next();
                 System.out.println("请输入机型:");

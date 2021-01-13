@@ -1,12 +1,12 @@
-package impl;
+package cn.edu.hcnu.dao;
 
-import bean.Flight;
+import cn.edu.hcnu.bean.Flight;
 
+import java.sql.SQLException;
 import java.util.Set;
 
-public interface IFlightService {
-    void insetFlight(Flight flight);
-
+public interface IFlightDao {
+    void insertFlight(Flight flight) throws SQLException;
     Set<Flight> getAllFlights();
     Flight getFlightByDepartureTime(String departureTime);
     Flight getFlightByDepartureAirPort(String departureAirPort);
